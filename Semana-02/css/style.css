@@ -1,13 +1,30 @@
-*{
-    line-height: 1;
-}
-
 header>nav{
     text-align: right;
 }
 
+header{
+    display: inline;
+    float: right;
+    width: 75%;
+}
+
+aside{
+    background-color: #AACE9B;
+    float: left;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+}
+
+main{
+    float: right;
+    width: 75%;
+}
+
 footer{
     text-align: center;
+    float: right;
+    width: 75%;
 }
 
 button{

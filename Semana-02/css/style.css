@@ -162,11 +162,33 @@ main p{
     padding-bottom: 10px;
 }
 
+.section-6 div{
+    display: inline-block;
+    width: 30%;
+    padding-left: 20px;
+}
+
+.section-6 h3{
+    text-align: center;
+}
+
+.section-6 ol{
+    list-style-type: number;
+    list-style-position: outside;
+}
+
+.section-6 a{
+    text-decoration: none;
+    color: #373867;
+}
+
 footer{
     text-align: center;
     float: right;
     width: 75%;
     color: #363767;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 button{

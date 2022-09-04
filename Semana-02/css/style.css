@@ -1,8 +1,9 @@
 header{
-    display: inline;
+    display: inline-flex;
     float: right;
-    width: 75%;
+    width: 77%;
     color: #363767;
+    padding-top: 10px;
     padding-bottom: 5px;
     border-bottom: 2px solid #FF3E1D;
 }
@@ -11,8 +12,13 @@ header span{
     font-weight: bold;
 }
 
+header p{
+    inline-size: 50%;
+}
+
 header>nav{
     text-align: right;
+    inline-size: 50%;
 }
 
 aside{
@@ -69,19 +75,34 @@ aside img{
 
 main{
     float: right;
-    width: 75%;
+    width: 77%;
     line-height: normal;
 }
 
-main div{
-    display: inline-block;
-    width: 50%;
+section{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #373867;
+}
+
+.section-1{
+    display: inline-flex;
+}
+
+.section-1-1{
+    inline-size: 65%;
+}
+
+.section-1-2{
+    inline-size: 35%;
 }
 
 main h1{
     font-size: 40px;
     font-weight: bold;
     color: #363767;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 main h1 li{
@@ -119,11 +140,13 @@ footer{
     text-align: center;
     float: right;
     width: 75%;
+    color: #363767;
 }
 
 button{
     border: 2px solid red;
     color: red;
+    background-color: white;
 }
 
 button:hover{

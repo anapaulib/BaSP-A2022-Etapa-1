@@ -1,17 +1,15 @@
-header>nav{
-    text-align: right;
-}
-
 header{
     display: inline;
     float: right;
     width: 75%;
 }
 
-aside a{
-    text-decoration: none;
-    color: #363767;
-    font-size: 20px;
+header span{
+    font-weight: bold;
+}
+
+header>nav{
+    text-align: right;
 }
 
 aside{
@@ -25,14 +23,45 @@ aside{
     line-height: normal;
 }
 
+aside a{
+    text-decoration: none;
+    color: #363767;
+    font-size: 20px;
+}
+
+aside a:hover{
+    color: #FF3E1D;
+}
+
+aside li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #363767;
+}
+
 aside h2{
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline solid #F13312;
+    margin-bottom: 10px;
 }
 
 aside p{
     font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.more-padding{
+    padding-bottom: 30px;
+}
+
+p.line{
+    border-bottom: 1px solid #363767;
+}
+
+aside img{
+    color: #363767;
 }
 
 main{

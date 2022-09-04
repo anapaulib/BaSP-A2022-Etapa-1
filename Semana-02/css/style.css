@@ -155,6 +155,13 @@ main p{
     padding-bottom: 10px;
 }
 
+.section-3 article{
+    display: inline-block;
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 footer{
     text-align: center;
     float: right;

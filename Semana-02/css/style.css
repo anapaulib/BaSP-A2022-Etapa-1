@@ -2,6 +2,9 @@ header{
     display: inline;
     float: right;
     width: 75%;
+    color: #363767;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FF3E1D;
 }
 
 header span{
@@ -67,6 +70,49 @@ aside img{
 main{
     float: right;
     width: 75%;
+    line-height: normal;
+}
+
+main div{
+    display: inline-block;
+    width: 50%;
+}
+
+main h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #363767;
+}
+
+main h1 li{
+    list-style-type: none;
+}
+
+main h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #363767;
+}
+
+.underlined{
+    display: inline;
+    border-bottom: 2px solid #FF3E1D;
+}
+
+main h3{
+    font-size: 14px;
+    font-weight: bold;
+    color: #363767;
+}
+
+main h4{
+    font-size: 20px;
+    color: #363767;
+}
+
+main p{
+    font-size: 14px;
+    color: #363767;
 }
 
 footer{

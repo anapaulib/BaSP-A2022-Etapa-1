@@ -162,6 +162,36 @@ main p{
     padding-bottom: 10px;
 }
 
+.section-4 li{
+    list-style-type: none;
+    padding-top: 5px;
+}
+
+.section-4 input{
+    border: 1px solid #373867;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    inline-size: 40%;
+}
+
+.section-4 select{
+    margin-bottom: 10px;
+}
+
+#button-1{
+    background-color: #F13312;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+}
+
+#button-2{
+    background-color: #AACE9B;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+}
+
 .section-6 div{
     display: inline-block;
     width: 30%;
@@ -192,7 +222,7 @@ footer{
 }
 
 button{
-    border: 2px solid red;
+    border: 1px solid red;
     color: red;
     background-color: white;
 }

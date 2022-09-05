@@ -58,7 +58,7 @@ aside li{
     border-bottom: 1px solid #363767;
 }
 
-aside h2{
+aside h3{
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline solid #F13312;
@@ -119,7 +119,7 @@ main h1 li{
     list-style-type: none;
 }
 
-main h2{
+main h3{
     font-size: 30px;
     font-weight: bold;
     color: #363767;
@@ -130,15 +130,15 @@ main h2{
     border-bottom: 2px solid #FF3E1D;
 }
 
-main h3{
+main h2{
     font-size: 14px;
-    font-weight: bold;
     color: #363767;
 }
 
 main h4{
-    font-size: 20px;
-    color: #363767;
+    font-size: 14px;
+    font-weight: bold;
+    color: #373867;
 }
 
 main p{
@@ -241,7 +241,7 @@ button:hover{
     padding-left: 20px;
 }
 
-.section-6 h3{
+.section-6 h4{
     text-align: center;
 }
 

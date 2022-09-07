@@ -86,8 +86,7 @@ aside img{
 main{
     float: right;
     width: 77%;
-    line-height: normal;
-    
+    line-height: normal;   
 }
 
 section{
@@ -198,20 +197,27 @@ article{
     padding-top: 5px;
 }
 
-.section-4 input{
+.section-4 label, .section-4 legend{
+    color: #373867;
+}
+
+.form-1{
     border: 1px solid #373867;
     border-radius: 2px;
     margin-bottom: 10px;
-    inline-size: 40%;
+    width: 400px;
 }
 
-.section-4 select{
-    margin-bottom: 10px;
+.form{
+    display: inline-block;
+    width: 45%;
 }
 
 #message{
-    padding-bottom: 40px;
+    width: 945px;
+    padding-bottom: 80px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 #button-reset{

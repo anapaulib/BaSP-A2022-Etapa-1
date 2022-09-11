@@ -1,0 +1,294 @@
+/*header{
+    display: inline-flex;
+    float: right;
+    width: 77%;
+    color: #363767;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FF3E1D;
+}
+
+header span{
+    font-weight: bold;
+}
+
+header p{
+    inline-size: 50%;
+}
+
+header>nav{
+    text-align: right;
+    inline-size: 50%;
+    padding-right: 10px;
+}
+
+i{
+    font-size: 29px;
+    color: #5d5d5d;
+}
+
+header i:hover, footer i:hover{
+    color: #F13312;
+}
+
+aside{
+    background-color: #AACE9B;
+    color: #363767;
+    float: left;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    padding: 15px;
+    line-height: normal;
+}
+
+aside a{
+    text-decoration: none;
+    color: #363767;
+    font-size: 20px;
+}
+
+aside a:hover{
+    color: #FF3E1D;
+}
+
+aside li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #363767;
+}
+
+aside h3{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline solid #F13312;
+    margin-bottom: 10px;
+}
+
+aside p{
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.more-padding{
+    padding-bottom: 30px;
+}
+
+p.line{
+    border-bottom: 1px solid #363767;
+}
+
+aside img{
+    color: #363767;
+}
+
+main{
+    float: right;
+    width: 77%;
+    line-height: normal;   
+}
+
+section{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #373867;
+}
+
+.section-1{
+    display: inline-flex;
+}
+
+.section-1-1{
+    inline-size: 65%;
+}
+
+.section-1-2{
+    inline-size: 35%;
+}
+
+main h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #363767;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+main h1 li{
+    list-style-type: none;
+}
+
+main h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #363767;
+}
+
+.underlined{
+    display: inline-block;
+    border-bottom: 2px solid #FF3E1D;
+}
+
+main h2{
+    font-size: 14px;
+    color: #363767;
+    padding-bottom: 20px;
+}
+
+main h4{
+    font-size: 14px;
+    font-weight: bold;
+    color: #373867;
+}
+
+main p{
+    font-size: 14px;
+    color: #363767;
+    padding-bottom: 20px;
+}
+
+.fa-solid {
+    font-size: 14px;
+    color: #373867;
+}
+
+button{
+    border: 1px solid red;
+    border-radius: 3px;
+    color: red;
+    background-color: white;
+    width: 69.5px;
+    height: 33px;
+}
+
+button:hover{
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+}
+
+#button-learn-more{
+    width: 140px;
+    height: 34px;
+}
+
+.section-2-img{
+    inline-size: 15%;
+}
+
+.section-2-text{
+    inline-size: 70%;
+}
+
+.section-2 article>div{
+    display: inline-flex;
+}
+
+article{
+    display: inline-block;
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.section-4 li{
+    list-style-type: none;
+    padding-top: 5px;
+}
+
+.section-4 label, .section-4 legend{
+    color: #373867;
+}
+
+.form-1{
+    border: 1px solid #373867;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.form{
+    display: inline-block;
+    width: 45%;
+}
+
+#message{
+    width: 945px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#button-reset{
+    background-color: lightcoral;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+    width: 69.5px;
+    height: 33px;
+}
+
+#button-reset:hover{
+    background-color: #F13312;
+}
+
+#button-send{
+    background-color: #AACE9B;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+    width: 110px;
+    height: 33px;
+}
+
+#button-send:hover{
+    background-color: #363767;
+    color: white;
+}
+
+.section-5 img{
+    padding: 10px;
+}
+
+.section-5 div p, .section-5 div img{
+    display: inline-flex;
+    width: 30%;
+}
+
+.section-5 div p{
+    vertical-align: top;
+}
+
+.section-6 div{
+    display: inline-block;
+    width: 30%;
+    padding-left: 20px;
+}
+
+.section-6 h4{
+    text-align: center;
+}
+
+.section-6 ol{
+    list-style-type: number;
+    list-style-position: outside;
+}
+
+.section-6 a{
+    text-decoration: none;
+    color: #373867;
+}
+
+footer{
+    text-align: center;
+    float: right;
+    width: 75%;
+    color: #363767;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+footer nav{
+    padding-bottom: 10px;
+}/*

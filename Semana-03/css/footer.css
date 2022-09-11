@@ -1,6 +1,7 @@
 footer{
     display: flex;
     flex-direction: column;
+    padding: 5px 0px 5px 0px;
 }
 
 footer nav{
@@ -8,6 +9,7 @@ footer nav{
 }
 
 footer p{
-    font-size: 10px;
+    font-size: 14px;
+    text-align: center;
     align-self: center;
 }

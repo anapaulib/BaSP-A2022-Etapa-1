@@ -16,7 +16,7 @@ section{
 .underlined{
     display: inline-block;
     padding-bottom: 5px;
-    border-bottom: 1px solid #FF3E1D;
+    border-bottom: 2px solid #FF3E1D;
 }
 
 .section-2 p, .section-3 p, .section-5 p{
@@ -39,7 +39,25 @@ section{
 }
 
 .section-4 li{
+    list-style-type: none;
     padding: 3px 0px 3px 0px;
+}
+
+.section-5 h3{
+    padding: 5px 0px 5px 0px;
+}
+
+.section-6{
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-6 ol{
+    list-style-type: number;
+}
+
+.section-6 a{
+    color: #373867;
 }
 
 #button-learn-more{

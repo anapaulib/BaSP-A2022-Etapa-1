@@ -5,3 +5,11 @@
 .none-sidebar{
     padding: 2px;
 }
+
+.none-sidebar i{
+    color: #5d5d5d;
+}
+
+.none-sidebar i:hover{
+    color: #f13312;
+}

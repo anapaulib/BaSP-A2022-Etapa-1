@@ -1,0 +1,13 @@
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+footer nav{
+    align-self: center;
+}
+
+footer p{
+    font-size: 10px;
+    align-self: center;
+}

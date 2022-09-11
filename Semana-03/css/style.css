@@ -2,21 +2,76 @@ body{
     display:flex;
 }
 
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+body div i, .none-sidebar i{
+    color: #5d5d5d;
+}
+
+body div i:hover, .none-sidebar i:hover{
+    color: #f13312;
+}
+
 h1{
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
-    color: #363767; 
+    color: #363867; 
 }
 
 h2{
     font-size: 14px;
-    color: #363767;
+    color: #363867;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #363867;
+}
+
+h4{
+    font-size: 14px;
+    font-weight: bold;
+    color: #373867;
+}
+
+button{
+    border: 1px solid red;
+    border-radius: 3px;
+    color: red;
+    background-color: white;
+    width: 69.5px;
+    height: 33px;
+}
+
+button:hover{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+}
+
+/* Tamaños para desktop
+h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #363867; 
+}
+
+h2{
+    font-size: 14px;
+    color: #363867;
 }
 
 h3{
     font-size: 30px;
     font-weight: bold;
-    color: #363767;
+    color: #363867;
 }
 
 h4{
@@ -54,7 +109,7 @@ body div i, .none-sidebar i{
 
 body div i:hover, .none-sidebar i:hover{
     color: #f13312;
-}
+}*/
 
 /*header{
     display: inline-flex;

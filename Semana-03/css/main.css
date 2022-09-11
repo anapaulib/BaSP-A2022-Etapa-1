@@ -6,6 +6,11 @@ section{
 .section-1-p{
     font-size: 14px;
     color: #363867;
+    padding: 2px 0px 2px 0px;
+}
+
+.section-1 img, .section-3 img{
+    padding: 5px 0px 5px 0px;
 }
 
 .underlined{
@@ -14,9 +19,10 @@ section{
     border-bottom: 1px solid #FF3E1D;
 }
 
-.section-2 p{
+.section-2 p, .section-3 p, .section-5 p{
     font-size: 14px;
     color: #373867;
+    padding: 5px 0px 5px 0px;
 }
 
 .section-2-div{
@@ -28,7 +34,49 @@ section{
     padding: 0px 5px 0px 5px;
 }
 
+.section-4 label, .section-4 legend{
+    color: #373867;
+}
+
+.section-4 li{
+    padding: 3px 0px 3px 0px;
+}
+
 #button-learn-more{
     width: 140px;
     height: 33px;
+}
+
+#message{
+    width: 80%;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#button-reset{
+    background-color: lightcoral;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+    width: 69.5px;
+    height: 33px;
+}
+
+#button-reset:hover{
+    background-color: #F13312;
+}
+
+#button-send{
+    background-color: #AACE9B;
+    color: #363767;
+    border: 1px solid #363767;
+    border-radius: 3px;
+    width: 110px;
+    height: 33px;
+}
+
+#button-send:hover{
+    background-color: #363767;
+    color: white;
 }

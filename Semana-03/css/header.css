@@ -2,10 +2,11 @@ header{
     padding: 5px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid #FF3E1D;
 }
 
 header p{
-    font-size: 10px;
+    font-size: 14px;
     color: #373867;
 }
 

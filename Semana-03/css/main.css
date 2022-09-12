@@ -98,3 +98,51 @@ section{
     background-color: #363767;
     color: white;
 }
+
+@media only screen and (min-width: 480px){  
+    .section-1{
+        display: flex;
+    }
+
+    .section-1-1{
+        flex-basis: 53%;
+    }
+
+    .section-1-2{
+        flex-basis: 30%;
+    }
+
+    .section-2 div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-2 article{
+        flex-basis: 50%;
+    }
+
+    .section-2-div{
+        display: flex;
+    }
+
+    .section-2-text{
+        flex-basis: 80%;
+    }
+
+    .section-3 div{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-3 article{
+        flex-basis: 50%;
+    }
+
+    .form{
+        display: flex;
+    }
+
+    .form-1{
+        flex-basis: 50%;
+    }
+}

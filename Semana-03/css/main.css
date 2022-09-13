@@ -143,7 +143,11 @@ section{
 
     .section-5-div{
         display: flex;
-        align-items: center;
+    }
+
+    .section-5-div img{
+        align-self: center;
+        padding: 2px;
     }
 
     .section-6{

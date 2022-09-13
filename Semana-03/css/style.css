@@ -5,6 +5,7 @@ body{
 
 body>div{
     overflow-y: auto;
+    flex-basis: 80%;
 }
 
 *{

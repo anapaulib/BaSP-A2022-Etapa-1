@@ -1,16 +1,25 @@
 body{
     display:flex;
+    overflow: hidden;
+}
+
+body>div{
+    overflow-y: auto;
+}
+
+*{
+    line-height: 1.2;
 }
 
 a{
     text-decoration: none;
 }
 
-body div i, .none-sidebar i{
+body>div i, .none-sidebar i{
     color: #5d5d5d;
 }
 
-body div i:hover, .none-sidebar i:hover{
+body>div i:hover, .none-sidebar i:hover{
     color: #f13312;
 }
 
@@ -65,7 +74,7 @@ button:hover{
         font-size: 30px;
     }
 
-    body div{
+    body>div{
         padding: 5px;
     }
 }

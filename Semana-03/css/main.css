@@ -145,4 +145,8 @@ section{
     .form-1{
         flex-basis: 50%;
     }
+
+    .section-5-div{
+        display: flex;
+    }
 }

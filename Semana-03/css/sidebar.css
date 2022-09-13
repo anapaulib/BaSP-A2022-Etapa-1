@@ -1,7 +1,3 @@
-.sidebar{
-    display: none;
-}
-
 .none-sidebar{
     padding: 2px;
 }
@@ -12,4 +8,63 @@
 
 .none-sidebar i:hover{
     color: #f13312;
+}
+
+.sidebar{
+    display: none;
+    background-color: #aace9b;
+    color: #363867;
+    flex-basis: 20%;
+    padding: 10px;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: #363767;
+    font-size: 20px;
+}
+
+.sidebar a:hover{
+    color: #FF3E1D;
+}
+
+.sidebar li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #363767;
+}
+
+.sidebar h3{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline solid #F13312;
+    margin-bottom: 10px;
+}
+
+.sidebar p{
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.more-padding{
+    padding-bottom: 30px;
+}
+
+.sidebar img{
+    color: #363767;
+}
+
+p.line{
+    border-bottom: 1px solid #363767;
+}
+
+@media only screen and (min-width: 1024px){
+    .none-sidebar{
+        display: none;
+    }
+
+    .sidebar{
+        display: block;
+    }
 }

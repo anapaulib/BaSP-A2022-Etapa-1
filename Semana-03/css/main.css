@@ -54,6 +54,10 @@ section{
     color: #373867;
 }
 
+.section-6 a:hover{
+    color: #030572;
+}
+
 #button-learn-more{
     width: 140px;
     height: 33px;

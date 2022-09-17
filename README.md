@@ -17,7 +17,7 @@ Each one of the team worked in his own html and css files from week 02 making co
 https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
 ### Week 04 - Java Script
 Each one of the team worked in his own html and css files from week 03 making corrections from our tutors.  
-https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html  
 Each one of the team solved a list of exercises using Java Script.  
 https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
 

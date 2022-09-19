@@ -97,7 +97,7 @@ section{
     color: white;
 }
 
-@media only screen and (min-width: 480px){  
+@media only screen and (min-width: 480px){
     .section-1{
         display: flex;
         justify-content: space-between;

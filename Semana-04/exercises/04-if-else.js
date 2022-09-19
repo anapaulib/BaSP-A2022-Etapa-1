@@ -26,7 +26,7 @@ b. Crear una variable “Age” que contenga un número entero entre 0 y 100 y m
 */
 
 console.log('-Exercise 4.b');
-var age = 23;
+var age = Math.round(Math.random()*100);
 if(age<2){
     alert('Bebé');
 }else{

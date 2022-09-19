@@ -31,7 +31,7 @@ completa.
 console.log('-Exercise 5.c');
 var sentence = '';
 for (i = 0; i<j; i++){
-    sentence = sentence + array[i];
+    sentence = sentence + array[i] + ' ';
 }
 alert(sentence);
 

@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px 5px 0px;
+}
+
+footer nav{
+    align-self: center;
+}
+
+footer p{
+    font-size: 14px;
+    text-align: center;
+    align-self: center;
+}

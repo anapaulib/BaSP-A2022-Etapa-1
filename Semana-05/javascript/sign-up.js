@@ -1,7 +1,8 @@
 window.onload = function(){
     function onlyLetters(word){
         for (i=0; i<word.length; i++){
-            if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||(word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)){
+            if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
+            (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)){
             }else{
                 return false;
             }
@@ -19,13 +20,26 @@ window.onload = function(){
         return true;
     }
 
+    function NumAndLett(word){
+        for (i=0; i<word.lenght; i++){
+            if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
+            (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)||
+            (word.charCodeAt(i)>=48 && word.charCodeAt(i)<=57)){
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+
     function space (word){
         for (i=0; i<word.length; i++){
             if (word.charCodeAt(i) == 32){
-                return true;
+            }else{
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     //NAME
@@ -41,6 +55,7 @@ window.onload = function(){
     
     validarName.onblur = function(){
         if (onlyLetters(validarName.value) && validarName.value.length>=3){
+            validarName.style.border = '2px solid #363867';
         }else{
             validarName.style.border = '2px solid red';
             nameDiv.appendChild(nameAlert);
@@ -60,6 +75,7 @@ window.onload = function(){
 
     validarSurname.onblur = function(){
         if (onlyLetters(validarSurname.value) && validarSurname.value.length>=3){
+            validarSurname.style.border = '2px solid #363867';
         }else{
             validarSurname.style.border = '2px solid red';
             surnameDiv.appendChild(surnameAlert);
@@ -79,6 +95,7 @@ window.onload = function(){
 
     validarID.onblur = function(){
         if (onlyNumbers(validarID.value) && validarID.value.length>7){
+            validarID.style.border = '2px solid #363867';
         }else{
             validarID.style.border = '2px solid red';
             idDiv.appendChild(idAlert);
@@ -101,20 +118,73 @@ window.onload = function(){
 
     validarPhone.onblur = function(){
         if (onlyNumbers(validarPhone.value) && validarPhone.value.length==10){
+            validarPhone.style.border = '2px solid #363867';
         }else{
             validarPhone.style.border = '2px solid red';
             phoneDiv.appendChild(phoneAlert);
         }
     }
-    
+
     //ADDRESS
     var validarAddress = document.getElementById('address-input');
+    var addressAlert = document.createElement('p');
+    addressAlert.innerHTML = 'Address non valid';
+    addressAlert.style.color = 'red';
+    var addressDiv = document.getElementById('address');
+
+    validarAddress.onfocus = function(){
+        addressDiv.removeChild(addressAlert);
+    }
+
+    validarAddress.onblur = function(){
+        if ((onlyLetters(validarAddress.value) || onlyNumbers(validarAddress.value)) && space(validarAddress.value)
+        && validarAddress.value.length>=5){
+            validarAddress.style.border = '2px solid #363867';
+        }else{
+            validarAddress.style.border = '2px solid red';
+            addressDiv.appendChild(addressAlert);
+        }
+    }
 
     //CITY
     var validarCity = document.getElementById('city-input');
+    var cityAlert = document.createElement('p');
+    cityAlert.innerHTML = 'City non valid';
+    cityAlert.style.color = 'red';
+    var cityDiv = document.getElementById('city');
+
+    validarCity.onfocus = function(){
+        cityDiv.removeChild(cityAlert);
+    }
+
+    validarCity.onblur = function(){
+        if ((onlyLetters(validarCity.value) || onlyNumbers(validarCity.value)) && validarCity.value.length>3){
+            validarCity.style.border = '2px solid #363867';
+        }else{
+            validarCity.style.border = '2px solid red';
+            cityDiv.appendChild(cityAlert);
+        }
+    }
 
     //POSTCDE
     var validarPostcode = document.getElementById('postcode-input');
+    var postcodeAlert = document.createElement('p');
+    postcodeAlert.innerHTML = 'Postcode non valid';
+    postcodeAlert.style.color = 'red';
+    var postcodeDiv = document.getElementById('postcode');
+
+    validarPostcode.onfocus = function(){
+        postcodeDiv.removeChild(postcodeAlert);
+    }
+
+    validarPostcode.onblur = function(){
+        if (onlyNumbers(validarPostcode.value) && validarPostcode.value.length>=4 && validarPostcode.value.length<=5){
+            validarPostcode.style.border = '2px solid #363867';
+        }else{
+            validarPostcode.style.border = '2px solid red';
+            postcodeDiv.appendChild(postcodeAlert);
+        }
+    }
 
     //EMAIL
     var validarEmail = document.getElementById('email-input');

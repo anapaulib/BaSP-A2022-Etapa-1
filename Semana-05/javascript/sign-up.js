@@ -275,7 +275,7 @@ window.onload = function(){
     }
 
     validarPassword2.onblur = function(){
-        if(validarPassword.value === validarPassword2.value){
+        if(validarPassword2.value.length >= 8 && validarPassword.value === validarPassword2.value){
             validarPassword2.style.border = '2px solid #363867';
             validar[10] = true;
         }else{

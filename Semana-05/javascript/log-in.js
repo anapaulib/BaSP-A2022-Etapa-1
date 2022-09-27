@@ -1,4 +1,6 @@
 window.onload = function (){
+    var validar = [];
+    
     //EMAIL
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -12,10 +14,13 @@ window.onload = function (){
     }
 
     validarEmail.onblur = function(){
-        if (emailExpression.test(validarEmail)){
+        if (emailExpression.test(validarEmail.value)){
+            validarEmail.style.border = '2px solid #363867';
+            validar[0] = true;
         }else{
             validarEmail.style.border = '2px solid red';
             emailDiv.appendChild(emailAlert);
+            validar[0] = false;
         }
     }
     
@@ -33,23 +38,22 @@ window.onload = function (){
     validarPassword.onblur = function(){
         if (validarPassword.value.length >= 8){
             validarPassword.style.border = '2px solid #363867';
+            validar[1] = true;
         }else{
             validarPassword.style.border = '2px solid red';
             passDiv.appendChild(passAlert);
+            validar[1] = false;
         }
     }
 
     //VALIDATION AND SUBMIT
-    var validar = [];
-    validar[0] = emailExpression.test(validarEmail);
-    validar[1] = validarPassword.value.length >= 8;
     var button = document.getElementById('button-send');
-
+    
     button.onclick = function(){
         if (validar.includes(false)){
             alert ('There are invalids inputs. Please correct and send again.')
         }else{
-            alert('Email: ' + validarEmail.value + '\n + Password: ' + validarPassword.value);
+            alert('Email: ' + validarEmail.value + '\nPassword: ' + validarPassword.value);
         }
     }
 }

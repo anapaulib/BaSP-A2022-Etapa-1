@@ -1,7 +1,6 @@
 window.onload = function (){
     var validar = [];
     
-    //EMAIL
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailAlert = document.createElement('p');
@@ -24,7 +23,6 @@ window.onload = function (){
         }
     }
     
-    //PASSWORD
     var validarPassword = document.getElementById('password-input');
     var passAlert = document.createElement('p');
     passAlert.innerHTML = 'Password has to be 8 characters long or more';
@@ -46,7 +44,6 @@ window.onload = function (){
         }
     }
 
-    //VALIDATION AND SUBMIT
     var button = document.getElementById('button-send');
     
     button.onclick = function(){

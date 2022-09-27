@@ -32,19 +32,8 @@ window.onload = function(){
         return true;
     }
 
-    function space (word){
-        for (i=0; i<word.length; i++){
-            if (word.charCodeAt(i) == 32){
-            }else{
-                return false;
-            }
-        }
-        return true;
-    }
-
     var validar = [];
 
-    //NAME
     var validarName = document.getElementById('name-input');
     var nameAlert = document.createElement('p');
     nameAlert.innerHTML = 'Name is too short';
@@ -66,7 +55,6 @@ window.onload = function(){
         }
     }
 
-    //SURNAME
     var validarSurname = document.getElementById('surname-input');
     var surnameAlert = document.createElement('p');
     surnameAlert.innerHTML = 'Surname is too short';
@@ -88,7 +76,6 @@ window.onload = function(){
         }
     }
 
-    //ID
     var validarID = document.getElementById('ID-input');
     var idAlert = document.createElement('p');
     idAlert.innerHTML = 'ID has to be at least 8 numbers long';
@@ -110,7 +97,6 @@ window.onload = function(){
         }
     }
 
-    //BIRTH DATE
     var validarBirth = document.getElementById('birth-input');
     var birthAlert = document.createElement('p');
     birthAlert.innerHTML = 'Date of birth is required';
@@ -132,7 +118,6 @@ window.onload = function(){
         }
     }
 
-    //PHONE NUMBER
     var validarPhone = document.getElementById('phone-input');
     var phoneAlert = document.createElement('p');
     phoneAlert.innerHTML = 'Phone number has to be ten numbers long'
@@ -154,7 +139,6 @@ window.onload = function(){
         }
     }
 
-    //ADDRESS
     var validarAddress = document.getElementById('address-input');
     var addressAlert = document.createElement('p');
     addressAlert.innerHTML = 'Invalid address';
@@ -176,7 +160,6 @@ window.onload = function(){
         }
     }
 
-    //CITY
     var validarCity = document.getElementById('city-input');
     var cityAlert = document.createElement('p');
     cityAlert.innerHTML = 'City non valid';
@@ -198,7 +181,6 @@ window.onload = function(){
         }
     }
 
-    //POSTCDE
     var validarPostcode = document.getElementById('postcode-input');
     var postcodeAlert = document.createElement('p');
     postcodeAlert.innerHTML = 'Postcode non valid';
@@ -220,7 +202,6 @@ window.onload = function(){
         }
     }
 
-    //EMAIL
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailAlert = document.createElement('p');
@@ -243,7 +224,6 @@ window.onload = function(){
         }
     }
 
-    //PASSWORD
     var validarPassword = document.getElementById('password-input');
     var validarPassword2 = document.getElementById('password2-input');
     var passwordAlert = document.createElement('p');
@@ -285,7 +265,6 @@ window.onload = function(){
         }
     }
 
-    //VALIDATION AND SUBMIT
     var button = document.getElementById('button-send');
     
     button.onclick = function(){

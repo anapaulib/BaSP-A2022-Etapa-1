@@ -36,7 +36,7 @@ window.onload = function(){
 
     var validarName = document.getElementById('name-input');
     var nameAlert = document.createElement('p');
-    nameAlert.innerHTML = 'Name is too short';
+    nameAlert.innerHTML = 'Name has to be 3 characters long or more and contain only letters';
     nameAlert.style.color = 'red';
     var nameDiv = document.getElementById('name');
     
@@ -57,7 +57,7 @@ window.onload = function(){
 
     var validarSurname = document.getElementById('surname-input');
     var surnameAlert = document.createElement('p');
-    surnameAlert.innerHTML = 'Surname is too short';
+    surnameAlert.innerHTML = 'Surname has to be 3 characters long or more and contain only letters';
     surnameAlert.style.color = 'red';
     var surnameDiv = document.getElementById('surname');
 
@@ -162,7 +162,7 @@ window.onload = function(){
 
     var validarCity = document.getElementById('city-input');
     var cityAlert = document.createElement('p');
-    cityAlert.innerHTML = 'City non valid';
+    cityAlert.innerHTML = 'Invalid city';
     cityAlert.style.color = 'red';
     var cityDiv = document.getElementById('city');
 
@@ -183,7 +183,7 @@ window.onload = function(){
 
     var validarPostcode = document.getElementById('postcode-input');
     var postcodeAlert = document.createElement('p');
-    postcodeAlert.innerHTML = 'Postcode non valid';
+    postcodeAlert.innerHTML = 'Postcode has to be 4 or 5 numbers long';
     postcodeAlert.style.color = 'red';
     var postcodeDiv = document.getElementById('postcode');
 
@@ -205,7 +205,7 @@ window.onload = function(){
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailAlert = document.createElement('p');
-    emailAlert.innerHTML = 'Email non valid';
+    emailAlert.innerHTML = 'Invalid email';
     emailAlert.style.color = 'red';
     var emailDiv = document.getElementById('email');
 

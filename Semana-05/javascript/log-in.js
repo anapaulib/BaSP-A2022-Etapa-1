@@ -4,7 +4,7 @@ window.onload = function (){
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailAlert = document.createElement('p');
-    emailAlert.innerHTML = 'Email non valid';
+    emailAlert.innerHTML = 'Invalid email';
     emailAlert.style.color = 'red';
     var emailDiv = document.getElementById('email');
 

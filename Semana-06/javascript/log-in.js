@@ -1,5 +1,9 @@
 window.onload = function (){
     var validar = [];
+
+    var generalAlert = document.createElement('p');
+    generalAlert.innerHTML = 'This field must be filled';
+    generalAlert.style.color = 'red';
     
     var validarEmail = document.getElementById('email-input');
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -9,17 +13,22 @@ window.onload = function (){
     var emailDiv = document.getElementById('email');
 
     validarEmail.onfocus = function(){
+        emailDiv.removeChild(generalAlert);
         emailDiv.removeChild(emailAlert);
     }
 
     validarEmail.onblur = function(){
-        if (emailExpression.test(validarEmail.value)){
-            validarEmail.style.border = '2px solid #363867';
-            validar[0] = true;
-        }else{
+        if(validarEmail.value === ''){
             validarEmail.style.border = '2px solid red';
-            emailDiv.appendChild(emailAlert);
+            emailDiv.appendChild(generalAlert);
             validar[0] = false;
+        }else if (emailExpression.test(validarEmail.value)){
+                validarEmail.style.border = '2px solid #363867';
+                validar[0] = true;
+            }else{
+                validarEmail.style.border = '2px solid red';
+                emailDiv.appendChild(emailAlert);
+                validar[0] = false;
         }
     }
     
@@ -30,18 +39,23 @@ window.onload = function (){
     var passDiv = document.getElementById('password');
 
     validarPassword.onfocus = function(){
+        passDiv.removeChild(generalAlert);
         passDiv.removeChild(passAlert);
     }
 
     validarPassword.onblur = function(){
-        if (validarPassword.value.length >= 8){
-            validarPassword.style.border = '2px solid #363867';
-            validar[1] = true;
-        }else{
+        if (validarPassword.value === ''){
             validarPassword.style.border = '2px solid red';
-            passDiv.appendChild(passAlert);
+            passDiv.appendChild(generalAlert);
             validar[1] = false;
-        }
+        }else if (validarPassword.value.length >= 8){
+                validarPassword.style.border = '2px solid #363867';
+                validar[1] = true;
+            }else{
+                validarPassword.style.border = '2px solid red';
+                passDiv.appendChild(passAlert);
+                validar[1] = false;
+        }   
     }
 
     var button = document.getElementById('button-send');

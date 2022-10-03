@@ -1,6 +1,6 @@
 window.onload = function(){
     function onlyLetters(word){
-        for (i=0; i<word.length; i++){
+        for (var i=0; i<word.length; i++){
             if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
             (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)){
             }else{
@@ -11,7 +11,7 @@ window.onload = function(){
     }
     
     function onlyNumbers(word){
-        for (i=0; i<word.length; i++){
+        for (var i=0; i<word.length; i++){
             if (word.charCodeAt(i)>=48 && word.charCodeAt(i)<=57){
             }else{
                 return false;
@@ -21,7 +21,7 @@ window.onload = function(){
     }
 
     function NumAndLett(word){
-        for (i=0; i<word.lenght; i++){
+        for (var i=0; i<word.lenght; i++){
             if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
             (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)||
             (word.charCodeAt(i)>=48 && word.charCodeAt(i)<=57)){
@@ -34,6 +34,10 @@ window.onload = function(){
 
     var validar = [];
 
+    var generalAlert = document.createElement('p');
+    generalAlert.innerHTML = 'This field must be filled';
+    generalAlert.style.color = 'red';
+
     var validarName = document.getElementById('name-input');
     var nameAlert = document.createElement('p');
     nameAlert.innerHTML = 'Name has to be 3 characters long or more and contain only letters';
@@ -41,18 +45,23 @@ window.onload = function(){
     var nameDiv = document.getElementById('name');
     
     validarName.onfocus = function(){
+        nameDiv.removeChild(generalAlert);
         nameDiv.removeChild(nameAlert);
     }
     
     validarName.onblur = function(){
-        if (onlyLetters(validarName.value) && validarName.value.length>=3){
-            validarName.style.border = '2px solid #363867';
-            validar[0] = true;
-        }else{
+        if (validarName.value === ''){
             validarName.style.border = '2px solid red';
-            nameDiv.appendChild(nameAlert);
+            nameDiv.appendChild(generalAlert);
             validar[0] = false;
-        }
+        }else if (onlyLetters(validarName.value) && validarName.value.length>=3){
+                validarName.style.border = '2px solid #363867';
+                validar[0] = true;
+            }else{
+                validarName.style.border = '2px solid red';
+                nameDiv.appendChild(nameAlert);
+                validar[0] = false;
+            }
     }
 
     var validarSurname = document.getElementById('surname-input');
@@ -62,18 +71,23 @@ window.onload = function(){
     var surnameDiv = document.getElementById('surname');
 
     validarSurname.onfocus = function(){
+        surnameDiv.removeChild(generalAlert);
         surnameDiv.removeChild(surnameAlert);
     }
 
     validarSurname.onblur = function(){
-        if (onlyLetters(validarSurname.value) && validarSurname.value.length>=3){
-            validarSurname.style.border = '2px solid #363867';
-            validar[1] = true;
-        }else{
+        if (validarSurname.value === ''){
             validarSurname.style.border = '2px solid red';
-            surnameDiv.appendChild(surnameAlert);
+            surnameDiv.appendChild(generalAlert);
             validar[1] = false;
-        }
+        }else if (onlyLetters(validarSurname.value) && validarSurname.value.length>=3){
+                validarSurname.style.border = '2px solid #363867';
+                validar[1] = true;
+            }else{
+                validarSurname.style.border = '2px solid red';
+                surnameDiv.appendChild(surnameAlert);
+                validar[1] = false;
+            }
     }
 
     var validarID = document.getElementById('ID-input');
@@ -83,18 +97,23 @@ window.onload = function(){
     var idDiv = document.getElementById('ID');
 
     validarID.onfocus = function(){
+        idDiv.removeChild(generalAlert);
         idDiv.removeChild(idAlert);
     }
 
     validarID.onblur = function(){
-        if (onlyNumbers(validarID.value) && validarID.value.length>7){
-            validarID.style.border = '2px solid #363867';
-            validar[2] = true;
-        }else{
+        if (validarID.value === ''){
             validarID.style.border = '2px solid red';
-            idDiv.appendChild(idAlert);
+            idDiv.appendChild(generalAlert);
             validar[2] = false;
-        }
+        }else if (onlyNumbers(validarID.value) && validarID.value.length>7){
+                validarID.style.border = '2px solid #363867';
+                validar[2] = true;
+            }else{
+                validarID.style.border = '2px solid red';
+                idDiv.appendChild(idAlert);
+                validar[2] = false;
+            }
     }
 
     var validarBirth = document.getElementById('birth-input');
@@ -104,18 +123,23 @@ window.onload = function(){
     var birthDiv = document.getElementById('birth');
 
     validarBirth.onfocus = function(){
+        birthDiv.removeChild(generalAlert);
         birthDiv.removeChild(birthAlert);
     }
 
     validarBirth.onblur = function(){
-        if (!isNaN(Date.parse(validarBirth.value))){
-            validarBirth.style.border = '2px solid #363867';
-            validar[3] = true;
-        }else{
+        if (validarBirth.value === ''){
             validarBirth.style.border = '2px solid red';
-            birthDiv.appendChild(birthAlert);
+            birthDiv.appendChild(generalAlert);
             validar[3] = false;
-        }
+        }else if (!isNaN(Date.parse(validarBirth.value))){
+                validarBirth.style.border = '2px solid #363867';
+                validar[3] = true;
+            }else{
+                validarBirth.style.border = '2px solid red';
+                birthDiv.appendChild(birthAlert);
+                validar[3] = false;
+            }
     }
 
     var validarPhone = document.getElementById('phone-input');
@@ -125,18 +149,23 @@ window.onload = function(){
     var phoneDiv = document.getElementById('phone');
 
     validarPhone.onfocus = function(){
+        phoneDiv.removeChild(generalAlert);
         phoneDiv.removeChild(phoneAlert);
     }
 
     validarPhone.onblur = function(){
-        if (onlyNumbers(validarPhone.value) && validarPhone.value.length==10){
-            validarPhone.style.border = '2px solid #363867';
-            validar[4] = true;
-        }else{
+        if (validarPhone.value === ''){
             validarPhone.style.border = '2px solid red';
-            phoneDiv.appendChild(phoneAlert);
+            phoneDiv.appendChild(generalAlert);
             validar[4] = false;
-        }
+        }else if (onlyNumbers(validarPhone.value) && validarPhone.value.length==10){
+                validarPhone.style.border = '2px solid #363867';
+                validar[4] = true;
+            }else{
+                validarPhone.style.border = '2px solid red';
+                phoneDiv.appendChild(phoneAlert);
+                validar[4] = false;
+            }
     }
 
     var validarAddress = document.getElementById('address-input');
@@ -146,18 +175,23 @@ window.onload = function(){
     var addressDiv = document.getElementById('address');
 
     validarAddress.onfocus = function(){
+        addressDiv.removeChild(generalAlert);
         addressDiv.removeChild(addressAlert);
     }
 
     validarAddress.onblur = function(){
-        if (NumAndLett(validarAddress.value) && validarAddress.value.includes(' ') && validarAddress.value.length>=5){
-            validarAddress.style.border = '2px solid #363867';
-            validar[5] = true;
-        }else{
+        if (validarAddress.value === ''){
             validarAddress.style.border = '2px solid red';
-            addressDiv.appendChild(addressAlert);
+            addressDiv.appendChild(generalAlert);
             validar[5] = false;
-        }
+        }else if (NumAndLett(validarAddress.value) && validarAddress.value.includes(' ') && validarAddress.value.length>=5){
+                validarAddress.style.border = '2px solid #363867';
+                validar[5] = true;
+            }else{
+                validarAddress.style.border = '2px solid red';
+                addressDiv.appendChild(addressAlert);
+                validar[5] = false;
+            }
     }
 
     var validarCity = document.getElementById('city-input');
@@ -167,18 +201,23 @@ window.onload = function(){
     var cityDiv = document.getElementById('city');
 
     validarCity.onfocus = function(){
+        cityDiv.removeChild(generalAlert);
         cityDiv.removeChild(cityAlert);
     }
 
     validarCity.onblur = function(){
-        if (NumAndLett(validarCity.value) && validarCity.value.length>3){
-            validarCity.style.border = '2px solid #363867';
-            validar[6] = true;
-        }else{
+        if (validarCity.value === ''){
             validarCity.style.border = '2px solid red';
-            cityDiv.appendChild(cityAlert);
+            cityDiv.appendChild(generalAlert);
             validar[6] = false;
-        }
+        }else if (NumAndLett(validarCity.value) && validarCity.value.length>3){
+                validarCity.style.border = '2px solid #363867';
+                validar[6] = true;
+            }else{
+                validarCity.style.border = '2px solid red';
+                cityDiv.appendChild(cityAlert);
+                validar[6] = false;
+            }
     }
 
     var validarPostcode = document.getElementById('postcode-input');
@@ -188,18 +227,23 @@ window.onload = function(){
     var postcodeDiv = document.getElementById('postcode');
 
     validarPostcode.onfocus = function(){
+        postcodeDiv.removeChild(generalAlert);
         postcodeDiv.removeChild(postcodeAlert);
     }
 
     validarPostcode.onblur = function(){
-        if (onlyNumbers(validarPostcode.value) && validarPostcode.value.length>=4 && validarPostcode.value.length<=5){
-            validarPostcode.style.border = '2px solid #363867';
-            validar[7] = true;
-        }else{
+        if (validarPostcode.value === ''){
             validarPostcode.style.border = '2px solid red';
-            postcodeDiv.appendChild(postcodeAlert);
+            postcodeDiv.appendChild(generalAlert);
             validar[7] = false;
-        }
+        }else if (onlyNumbers(validarPostcode.value) && validarPostcode.value.length>=4 && validarPostcode.value.length<=5){
+                validarPostcode.style.border = '2px solid #363867';
+                validar[7] = true;
+            }else{
+                validarPostcode.style.border = '2px solid red';
+                postcodeDiv.appendChild(postcodeAlert);
+                validar[7] = false;
+            }
     }
 
     var validarEmail = document.getElementById('email-input');
@@ -210,18 +254,23 @@ window.onload = function(){
     var emailDiv = document.getElementById('email');
 
     validarEmail.onfocus = function(){
+        emailDiv.removeChild(generalAlert);
         emailDiv.removeChild(emailAlert);
     }
 
     validarEmail.onblur = function(){
-        if (emailExpression.test(validarEmail.value)){
-            validarEmail.style.border = '2px solid #363867';
-            validar[8] = true;
-        }else{
+        if (validarEmail.value === ''){
             validarEmail.style.border = '2px solid red';
-            emailDiv.appendChild(emailAlert);
+            emailDiv.appendChild(generalAlert);
             validar[8] = false;
-        }
+        }else if (emailExpression.test(validarEmail.value)){
+                validarEmail.style.border = '2px solid #363867';
+                validar[8] = true;
+            }else{
+                validarEmail.style.border = '2px solid red';
+                emailDiv.appendChild(emailAlert);
+                validar[8] = false;
+            }
     }
 
     var validarPassword = document.getElementById('password-input');
@@ -236,33 +285,43 @@ window.onload = function(){
     var password2Div = document.getElementById('password2');
 
     validarPassword.onfocus = function(){
+        passwordDiv.removeChild(generalAlert);
         passwordDiv.removeChild(passwordAlert);
     }
 
     validarPassword.onblur = function(){
-        if (validarPassword.value.length >= 8){
-            validarPassword.style.border = '2px solid #363867';
-            validar[9] = true;
-        }else{
+        if (validarPassword.value === ''){
             validarPassword.style.border = '2px solid red';
-            passwordDiv.appendChild(passwordAlert);
+            passwordDiv.appendChild(generalAlert);
             validar[9] = false;
-        }
+        }else if (validarPassword.value.length >= 8){
+                validarPassword.style.border = '2px solid #363867';
+                validar[9] = true;
+            }else{
+                validarPassword.style.border = '2px solid red';
+                passwordDiv.appendChild(passwordAlert);
+                validar[9] = false;
+            }
     }
 
     validarPassword2.onfocus = function(){
+        password2Div.removeChild(generalAlert);
         password2Div.removeChild(passwordAlert2);
     }
 
     validarPassword2.onblur = function(){
-        if(validarPassword2.value.length >= 8 && validarPassword.value === validarPassword2.value){
-            validarPassword2.style.border = '2px solid #363867';
-            validar[10] = true;
-        }else{
+        if (validarPassword2.value === ''){
             validarPassword2.style.border = '2px solid red';
-            password2Div.appendChild(passwordAlert2);
+            password2Div.appendChild(generalAlert);
             validar[10] = false;
-        }
+        }else if(validarPassword2.value.length >= 8 && validarPassword.value === validarPassword2.value){
+                validarPassword2.style.border = '2px solid #363867';
+                validar[10] = true;
+            }else{
+                validarPassword2.style.border = '2px solid red';
+                password2Div.appendChild(passwordAlert2);
+                validar[10] = false;
+            }
     }
 
     var button = document.getElementById('button-send');

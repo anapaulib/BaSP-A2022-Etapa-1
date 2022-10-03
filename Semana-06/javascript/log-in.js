@@ -29,7 +29,7 @@ window.onload = function (){
                 validarEmail.style.border = '2px solid red';
                 emailDiv.appendChild(emailAlert);
                 validar[0] = false;
-        }
+            }
     }
     
     var validarPassword = document.getElementById('password-input');
@@ -55,7 +55,7 @@ window.onload = function (){
                 validarPassword.style.border = '2px solid red';
                 passDiv.appendChild(passAlert);
                 validar[1] = false;
-        }   
+            }   
     }
 
     var button = document.getElementById('button-send');

@@ -64,7 +64,23 @@ window.onload = function (){
         if (validar.includes(false)){
             alert ('There are invalids inputs. Please correct and send again.')
         }else{
-            alert('Email: ' + validarEmail.value + '\nPassword: ' + validarPassword.value);
+            fetch('https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + validarEmail.value +
+            '&password=' + validarPassword.value)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    if (data.success){
+                        alert(data.msg + '\nEmail: ' + validarEmail.value + '\nPassword: ' + validarPassword.value);
+                        localStorage.setItem('email', validarEmail.value);
+                        localStorage.setItem('password', validarPassword.value);
+                    }else{
+                        alert(data.msg);
+                    }
+                })
+                .catch(function(){
+                    alert('There has been an error. Try again.')
+                })
         }
     }
 }

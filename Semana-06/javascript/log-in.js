@@ -79,7 +79,7 @@ window.onload = function (){
                     }
                 })
                 .catch(function(){
-                    alert('There has been an error. Try again.')
+                    alert('There has been an error. Try again.');
                 })
         }
     }

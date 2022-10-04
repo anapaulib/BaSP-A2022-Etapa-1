@@ -330,10 +330,28 @@ window.onload = function(){
         if (validar.includes(false)){
             alert ('There are invalids inputs. Please correct and send again.')
         }else{
-            alert('Name: ' + validarName.value + '\nSurname: ' + validarSurname.value + '\nID: ' + validarID.value +
-            '\nBirth date: ' + validarBirth.value + '\nPhone number: ' + validarPhone.value + '\nAddress: ' +
-            validarAddress.value + '\nCity: ' + validarCity.value + 'Post code: ' + validarPostcode.value +
-            '\nEmail: ' + validarEmail.value + '\nPassword: ' + validarPassword.value);
+            fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + validarName.value + '&lastName='
+            + validarSurname.value + '&dni=' + validarID.value + '&dob=' + validarBirth.value + '&phone='
+            + validarPhone.value + '&address=' + validarAddress.value + '&city=' + validarCity.value + '&zip='
+            + validarPostcode.value + '&email=' + validarEmail.value + '&password=' + validarPassword.value)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    console.log(data);
+                    if (data.success){
+                        alert(data.msg + '\nName: ' + validarName.value + '\nSurname: ' + validarSurname.value
+                        + '\nID: ' + validarID.value + '\nBirth date: ' + validarBirth.value + '\nPhone number: '
+                        + validarPhone.value + '\nAddress: ' + validarAddress.value + '\nCity: ' + validarCity.value
+                        + '\nPost code: ' + validarPostcode.value + '\nEmail: ' + validarEmail.value + '\nPassword: '
+                        + validarPassword.value);
+                    }else{
+                        alert(data.msg);
+                    }
+                })
+                .catch(function(){
+                    alert('There has been an error. Try again.');
+                })
         }
     }
 }

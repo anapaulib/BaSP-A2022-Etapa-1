@@ -12,6 +12,10 @@ window.onload = function (){
     emailAlert.style.color = 'red';
     var emailDiv = document.getElementById('email');
 
+    if (localStorage.getItem(email) != null && localStorage.getItem(email) != ''){
+        validarEmail.value = localStorage.getItem(email);
+    }
+
     validarEmail.onfocus = function(){
         emailDiv.removeChild(generalAlert);
         emailDiv.removeChild(emailAlert);
@@ -38,6 +42,10 @@ window.onload = function (){
     passAlert.style.color = 'red';
     var passDiv = document.getElementById('password');
 
+    if (localStorage.getItem(password) != null && localStorage.getItem(password) != ''){
+        validarPassword.value = localStorage.getItem(password);
+    }
+
     validarPassword.onfocus = function(){
         passDiv.removeChild(generalAlert);
         passDiv.removeChild(passAlert);
@@ -61,6 +69,8 @@ window.onload = function (){
     var button = document.getElementById('button-send');
     
     button.onclick = function(){
+        console.log(validarEmail.value);
+        console.log(validarPassword.value);
         if (validar.includes(false)){
             alert ('There are invalids inputs. Please correct and send again.')
         }else{
@@ -70,6 +80,7 @@ window.onload = function (){
                     return response.json();
                 })
                 .then(function(data){
+                    console.log(data);
                     if (data.success){
                         alert(data.msg + '\nEmail: ' + validarEmail.value + '\nPassword: ' + validarPassword.value);
                         localStorage.setItem('email', validarEmail.value);

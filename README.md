@@ -21,7 +21,10 @@ https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
 Each one of the team solved a list of exercises using Java Script.  
 https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
 ### Week 05 - Java Script (2)
-Each one of the team worked in his own html, css, and js files in order to add to the landing page the login and the signup pages. Those new pages contain forms that interact with the user in order to tell him if the information provided is correct or not.  
+Each one of the team worked in his own html, css and js files in order to add to the landing page the login and the signup pages. Those new pages contain forms that interact with the user in order to tell him if the information provided is correct or not.  
 https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-05/views/index.html
+### Week 06 - Java Script (3)
+Each one of the team worked in his own html, css and js files in order to add to the forms created the previous week the possibility to send the information to an API and adding alerts informing the state of that sending of information.  
+https://anapaulib.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
 
 _By Ana Paula Ibaceta_

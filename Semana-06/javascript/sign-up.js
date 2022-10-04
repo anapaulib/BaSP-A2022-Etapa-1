@@ -352,11 +352,11 @@ window.onload = function () {
                 .then(function (data) {
                     console.log(data);
                     if (data.success) {
-                        alert(data.msg + '\nName: ' + validarName.value + '\nSurname: ' + validarSurname.value
-                            + '\nID: ' + validarID.value + '\nBirth date: ' + birthDateChanged + '\nPhone number: '
-                            + validarPhone.value + '\nAddress: ' + validarAddress.value + '\nCity: ' + validarCity.value
-                            + '\nPost code: ' + validarPostcode.value + '\nEmail: ' + validarEmail.value + '\nPassword: '
-                            + validarPassword.value);
+                        alert(data.msg + '\nName: ' + data.data.name + '\nSurname: ' + data.data.lastName
+                            + '\nID: ' + data.data.dni + '\nBirth date: ' + data.data.dob + '\nPhone number: '
+                            + data.data.phone + '\nAddress: ' + data.data.address + '\nCity: ' + data.data.city
+                            + '\nPost code: ' + data.data.zip + '\nEmail: ' + data.data.email + '\nPassword: '
+                            + data.data.password);
                     } else {
                         var errorMessage = '';
                         for (var i = 0; i < data.errors.length; i++) {

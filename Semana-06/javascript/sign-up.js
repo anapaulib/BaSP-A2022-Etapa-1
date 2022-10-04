@@ -1,35 +1,46 @@
-window.onload = function(){
-    function onlyLetters(word){
-        for (var i=0; i<word.length; i++){
-            if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
-            (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)){
-            }else{
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    function onlyNumbers(word){
-        for (var i=0; i<word.length; i++){
-            if (word.charCodeAt(i)>=48 && word.charCodeAt(i)<=57){
-            }else{
+window.onload = function () {
+    function onlyLetters(word) {
+        for (var i = 0; i < word.length; i++) {
+            if ((word.charCodeAt(i) >= 65 && word.charCodeAt(i) <= 90) ||
+                (word.charCodeAt(i) >= 97 && word.charCodeAt(i) <= 122)) {
+            } else {
                 return false;
             }
         }
         return true;
     }
 
-    function NumAndLett(word){
-        for (var i=0; i<word.lenght; i++){
-            if ((word.charCodeAt(i)>=65 && word.charCodeAt(i)<=90)||
-            (word.charCodeAt(i)>=97 && word.charCodeAt(i)<=122)||
-            (word.charCodeAt(i)>=48 && word.charCodeAt(i)<=57)){
-            }else{
+    function onlyNumbers(word) {
+        for (var i = 0; i < word.length; i++) {
+            if (word.charCodeAt(i) >= 48 && word.charCodeAt(i) <= 57) {
+            } else {
                 return false;
             }
         }
         return true;
+    }
+
+    function NumAndLett(word) {
+        for (var i = 0; i < word.lenght; i++) {
+            if ((word.charCodeAt(i) >= 65 && word.charCodeAt(i) <= 90) ||
+                (word.charCodeAt(i) >= 97 && word.charCodeAt(i) <= 122) ||
+                (word.charCodeAt(i) >= 48 && word.charCodeAt(i) <= 57)) {
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function changeDate(date) {
+        if (date != null && date != '') {
+            var year = date.substr(0, 4);
+            var month = date.substr(5, 2);
+            var day = date.substr(8, 2);
+            return day + '/' + month + '/' + year;
+        } else {
+            return date;
+        }
     }
 
     var validar = [];
@@ -43,25 +54,25 @@ window.onload = function(){
     nameAlert.innerHTML = 'Name has to be 3 characters long or more and contain only letters';
     nameAlert.style.color = 'red';
     var nameDiv = document.getElementById('name');
-    
-    validarName.onfocus = function(){
+
+    validarName.onfocus = function () {
         nameDiv.removeChild(generalAlert);
         nameDiv.removeChild(nameAlert);
     }
-    
-    validarName.onblur = function(){
-        if (validarName.value === ''){
+
+    validarName.onblur = function () {
+        if (validarName.value === '') {
             validarName.style.border = '2px solid red';
             nameDiv.appendChild(generalAlert);
             validar[0] = false;
-        }else if (onlyLetters(validarName.value) && validarName.value.length>=3){
-                validarName.style.border = '2px solid #363867';
-                validar[0] = true;
-            }else{
-                validarName.style.border = '2px solid red';
-                nameDiv.appendChild(nameAlert);
-                validar[0] = false;
-            }
+        } else if (onlyLetters(validarName.value) && validarName.value.length >= 3) {
+            validarName.style.border = '2px solid #363867';
+            validar[0] = true;
+        } else {
+            validarName.style.border = '2px solid red';
+            nameDiv.appendChild(nameAlert);
+            validar[0] = false;
+        }
     }
 
     var validarSurname = document.getElementById('surname-input');
@@ -70,24 +81,24 @@ window.onload = function(){
     surnameAlert.style.color = 'red';
     var surnameDiv = document.getElementById('surname');
 
-    validarSurname.onfocus = function(){
+    validarSurname.onfocus = function () {
         surnameDiv.removeChild(generalAlert);
         surnameDiv.removeChild(surnameAlert);
     }
 
-    validarSurname.onblur = function(){
-        if (validarSurname.value === ''){
+    validarSurname.onblur = function () {
+        if (validarSurname.value === '') {
             validarSurname.style.border = '2px solid red';
             surnameDiv.appendChild(generalAlert);
             validar[1] = false;
-        }else if (onlyLetters(validarSurname.value) && validarSurname.value.length>=3){
-                validarSurname.style.border = '2px solid #363867';
-                validar[1] = true;
-            }else{
-                validarSurname.style.border = '2px solid red';
-                surnameDiv.appendChild(surnameAlert);
-                validar[1] = false;
-            }
+        } else if (onlyLetters(validarSurname.value) && validarSurname.value.length >= 3) {
+            validarSurname.style.border = '2px solid #363867';
+            validar[1] = true;
+        } else {
+            validarSurname.style.border = '2px solid red';
+            surnameDiv.appendChild(surnameAlert);
+            validar[1] = false;
+        }
     }
 
     var validarID = document.getElementById('ID-input');
@@ -96,24 +107,24 @@ window.onload = function(){
     idAlert.style.color = 'red';
     var idDiv = document.getElementById('ID');
 
-    validarID.onfocus = function(){
+    validarID.onfocus = function () {
         idDiv.removeChild(generalAlert);
         idDiv.removeChild(idAlert);
     }
 
-    validarID.onblur = function(){
-        if (validarID.value === ''){
+    validarID.onblur = function () {
+        if (validarID.value === '') {
             validarID.style.border = '2px solid red';
             idDiv.appendChild(generalAlert);
             validar[2] = false;
-        }else if (onlyNumbers(validarID.value) && validarID.value.length>7){
-                validarID.style.border = '2px solid #363867';
-                validar[2] = true;
-            }else{
-                validarID.style.border = '2px solid red';
-                idDiv.appendChild(idAlert);
-                validar[2] = false;
-            }
+        } else if (onlyNumbers(validarID.value) && validarID.value.length > 7) {
+            validarID.style.border = '2px solid #363867';
+            validar[2] = true;
+        } else {
+            validarID.style.border = '2px solid red';
+            idDiv.appendChild(idAlert);
+            validar[2] = false;
+        }
     }
 
     var validarBirth = document.getElementById('birth-input');
@@ -122,24 +133,24 @@ window.onload = function(){
     birthAlert.style.color = 'red';
     var birthDiv = document.getElementById('birth');
 
-    validarBirth.onfocus = function(){
+    validarBirth.onfocus = function () {
         birthDiv.removeChild(generalAlert);
         birthDiv.removeChild(birthAlert);
     }
 
-    validarBirth.onblur = function(){
-        if (validarBirth.value === ''){
+    validarBirth.onblur = function () {
+        if (validarBirth.value === '') {
             validarBirth.style.border = '2px solid red';
             birthDiv.appendChild(generalAlert);
             validar[3] = false;
-        }else if (!isNaN(Date.parse(validarBirth.value))){
-                validarBirth.style.border = '2px solid #363867';
-                validar[3] = true;
-            }else{
-                validarBirth.style.border = '2px solid red';
-                birthDiv.appendChild(birthAlert);
-                validar[3] = false;
-            }
+        } else if (!isNaN(Date.parse(validarBirth.value))) {
+            validarBirth.style.border = '2px solid #363867';
+            validar[3] = true;
+        } else {
+            validarBirth.style.border = '2px solid red';
+            birthDiv.appendChild(birthAlert);
+            validar[3] = false;
+        }
     }
 
     var validarPhone = document.getElementById('phone-input');
@@ -148,24 +159,24 @@ window.onload = function(){
     phoneAlert.style.color = 'red';
     var phoneDiv = document.getElementById('phone');
 
-    validarPhone.onfocus = function(){
+    validarPhone.onfocus = function () {
         phoneDiv.removeChild(generalAlert);
         phoneDiv.removeChild(phoneAlert);
     }
 
-    validarPhone.onblur = function(){
-        if (validarPhone.value === ''){
+    validarPhone.onblur = function () {
+        if (validarPhone.value === '') {
             validarPhone.style.border = '2px solid red';
             phoneDiv.appendChild(generalAlert);
             validar[4] = false;
-        }else if (onlyNumbers(validarPhone.value) && validarPhone.value.length==10){
-                validarPhone.style.border = '2px solid #363867';
-                validar[4] = true;
-            }else{
-                validarPhone.style.border = '2px solid red';
-                phoneDiv.appendChild(phoneAlert);
-                validar[4] = false;
-            }
+        } else if (onlyNumbers(validarPhone.value) && validarPhone.value.length == 10) {
+            validarPhone.style.border = '2px solid #363867';
+            validar[4] = true;
+        } else {
+            validarPhone.style.border = '2px solid red';
+            phoneDiv.appendChild(phoneAlert);
+            validar[4] = false;
+        }
     }
 
     var validarAddress = document.getElementById('address-input');
@@ -174,24 +185,24 @@ window.onload = function(){
     addressAlert.style.color = 'red';
     var addressDiv = document.getElementById('address');
 
-    validarAddress.onfocus = function(){
+    validarAddress.onfocus = function () {
         addressDiv.removeChild(generalAlert);
         addressDiv.removeChild(addressAlert);
     }
 
-    validarAddress.onblur = function(){
-        if (validarAddress.value === ''){
+    validarAddress.onblur = function () {
+        if (validarAddress.value === '') {
             validarAddress.style.border = '2px solid red';
             addressDiv.appendChild(generalAlert);
             validar[5] = false;
-        }else if (NumAndLett(validarAddress.value) && validarAddress.value.includes(' ') && validarAddress.value.length>=5){
-                validarAddress.style.border = '2px solid #363867';
-                validar[5] = true;
-            }else{
-                validarAddress.style.border = '2px solid red';
-                addressDiv.appendChild(addressAlert);
-                validar[5] = false;
-            }
+        } else if (NumAndLett(validarAddress.value) && validarAddress.value.includes(' ') && validarAddress.value.length >= 5) {
+            validarAddress.style.border = '2px solid #363867';
+            validar[5] = true;
+        } else {
+            validarAddress.style.border = '2px solid red';
+            addressDiv.appendChild(addressAlert);
+            validar[5] = false;
+        }
     }
 
     var validarCity = document.getElementById('city-input');
@@ -200,24 +211,24 @@ window.onload = function(){
     cityAlert.style.color = 'red';
     var cityDiv = document.getElementById('city');
 
-    validarCity.onfocus = function(){
+    validarCity.onfocus = function () {
         cityDiv.removeChild(generalAlert);
         cityDiv.removeChild(cityAlert);
     }
 
-    validarCity.onblur = function(){
-        if (validarCity.value === ''){
+    validarCity.onblur = function () {
+        if (validarCity.value === '') {
             validarCity.style.border = '2px solid red';
             cityDiv.appendChild(generalAlert);
             validar[6] = false;
-        }else if (NumAndLett(validarCity.value) && validarCity.value.length>3){
-                validarCity.style.border = '2px solid #363867';
-                validar[6] = true;
-            }else{
-                validarCity.style.border = '2px solid red';
-                cityDiv.appendChild(cityAlert);
-                validar[6] = false;
-            }
+        } else if (NumAndLett(validarCity.value) && validarCity.value.length > 3) {
+            validarCity.style.border = '2px solid #363867';
+            validar[6] = true;
+        } else {
+            validarCity.style.border = '2px solid red';
+            cityDiv.appendChild(cityAlert);
+            validar[6] = false;
+        }
     }
 
     var validarPostcode = document.getElementById('postcode-input');
@@ -226,24 +237,24 @@ window.onload = function(){
     postcodeAlert.style.color = 'red';
     var postcodeDiv = document.getElementById('postcode');
 
-    validarPostcode.onfocus = function(){
+    validarPostcode.onfocus = function () {
         postcodeDiv.removeChild(generalAlert);
         postcodeDiv.removeChild(postcodeAlert);
     }
 
-    validarPostcode.onblur = function(){
-        if (validarPostcode.value === ''){
+    validarPostcode.onblur = function () {
+        if (validarPostcode.value === '') {
             validarPostcode.style.border = '2px solid red';
             postcodeDiv.appendChild(generalAlert);
             validar[7] = false;
-        }else if (onlyNumbers(validarPostcode.value) && validarPostcode.value.length>=4 && validarPostcode.value.length<=5){
-                validarPostcode.style.border = '2px solid #363867';
-                validar[7] = true;
-            }else{
-                validarPostcode.style.border = '2px solid red';
-                postcodeDiv.appendChild(postcodeAlert);
-                validar[7] = false;
-            }
+        } else if (onlyNumbers(validarPostcode.value) && validarPostcode.value.length >= 4 && validarPostcode.value.length <= 5) {
+            validarPostcode.style.border = '2px solid #363867';
+            validar[7] = true;
+        } else {
+            validarPostcode.style.border = '2px solid red';
+            postcodeDiv.appendChild(postcodeAlert);
+            validar[7] = false;
+        }
     }
 
     var validarEmail = document.getElementById('email-input');
@@ -253,24 +264,24 @@ window.onload = function(){
     emailAlert.style.color = 'red';
     var emailDiv = document.getElementById('email');
 
-    validarEmail.onfocus = function(){
+    validarEmail.onfocus = function () {
         emailDiv.removeChild(generalAlert);
         emailDiv.removeChild(emailAlert);
     }
 
-    validarEmail.onblur = function(){
-        if (validarEmail.value === ''){
+    validarEmail.onblur = function () {
+        if (validarEmail.value === '') {
             validarEmail.style.border = '2px solid red';
             emailDiv.appendChild(generalAlert);
             validar[8] = false;
-        }else if (emailExpression.test(validarEmail.value)){
-                validarEmail.style.border = '2px solid #363867';
-                validar[8] = true;
-            }else{
-                validarEmail.style.border = '2px solid red';
-                emailDiv.appendChild(emailAlert);
-                validar[8] = false;
-            }
+        } else if (emailExpression.test(validarEmail.value)) {
+            validarEmail.style.border = '2px solid #363867';
+            validar[8] = true;
+        } else {
+            validarEmail.style.border = '2px solid red';
+            emailDiv.appendChild(emailAlert);
+            validar[8] = false;
+        }
     }
 
     var validarPassword = document.getElementById('password-input');
@@ -284,72 +295,77 @@ window.onload = function(){
     var passwordDiv = document.getElementById('password');
     var password2Div = document.getElementById('password2');
 
-    validarPassword.onfocus = function(){
+    validarPassword.onfocus = function () {
         passwordDiv.removeChild(generalAlert);
         passwordDiv.removeChild(passwordAlert);
     }
 
-    validarPassword.onblur = function(){
-        if (validarPassword.value === ''){
+    validarPassword.onblur = function () {
+        if (validarPassword.value === '') {
             validarPassword.style.border = '2px solid red';
             passwordDiv.appendChild(generalAlert);
             validar[9] = false;
-        }else if (validarPassword.value.length >= 8){
-                validarPassword.style.border = '2px solid #363867';
-                validar[9] = true;
-            }else{
-                validarPassword.style.border = '2px solid red';
-                passwordDiv.appendChild(passwordAlert);
-                validar[9] = false;
-            }
+        } else if (validarPassword.value.length >= 8) {
+            validarPassword.style.border = '2px solid #363867';
+            validar[9] = true;
+        } else {
+            validarPassword.style.border = '2px solid red';
+            passwordDiv.appendChild(passwordAlert);
+            validar[9] = false;
+        }
     }
 
-    validarPassword2.onfocus = function(){
+    validarPassword2.onfocus = function () {
         password2Div.removeChild(generalAlert);
         password2Div.removeChild(passwordAlert2);
     }
 
-    validarPassword2.onblur = function(){
-        if (validarPassword2.value === ''){
+    validarPassword2.onblur = function () {
+        if (validarPassword2.value === '') {
             validarPassword2.style.border = '2px solid red';
             password2Div.appendChild(generalAlert);
             validar[10] = false;
-        }else if(validarPassword2.value.length >= 8 && validarPassword.value === validarPassword2.value){
-                validarPassword2.style.border = '2px solid #363867';
-                validar[10] = true;
-            }else{
-                validarPassword2.style.border = '2px solid red';
-                password2Div.appendChild(passwordAlert2);
-                validar[10] = false;
-            }
+        } else if (validarPassword2.value.length >= 8 && validarPassword.value === validarPassword2.value) {
+            validarPassword2.style.border = '2px solid #363867';
+            validar[10] = true;
+        } else {
+            validarPassword2.style.border = '2px solid red';
+            password2Div.appendChild(passwordAlert2);
+            validar[10] = false;
+        }
     }
 
     var button = document.getElementById('button-send');
-    
-    button.onclick = function(){
-        if (validar.includes(false)){
-            alert ('There are invalids inputs. Please correct and send again.')
-        }else{
+
+    button.onclick = function () {
+        if (validar.includes(false)) {
+            alert('There are invalids inputs. Please correct and send again.')
+        } else {
+            var birthDateChanged = changeDate(validarBirth.value);
             fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + validarName.value + '&lastName='
-            + validarSurname.value + '&dni=' + validarID.value + '&dob=' + validarBirth.value + '&phone='
-            + validarPhone.value + '&address=' + validarAddress.value + '&city=' + validarCity.value + '&zip='
-            + validarPostcode.value + '&email=' + validarEmail.value + '&password=' + validarPassword.value)
-                .then(function(response){
+                + validarSurname.value + '&dni=' + validarID.value + '&dob=' + birthDateChanged + '&phone='
+                + validarPhone.value + '&address=' + validarAddress.value + '&city=' + validarCity.value + '&zip='
+                + validarPostcode.value + '&email=' + validarEmail.value + '&password=' + validarPassword.value)
+                .then(function (response) {
                     return response.json();
                 })
-                .then(function(data){
+                .then(function (data) {
                     console.log(data);
-                    if (data.success){
+                    if (data.success) {
                         alert(data.msg + '\nName: ' + validarName.value + '\nSurname: ' + validarSurname.value
-                        + '\nID: ' + validarID.value + '\nBirth date: ' + validarBirth.value + '\nPhone number: '
-                        + validarPhone.value + '\nAddress: ' + validarAddress.value + '\nCity: ' + validarCity.value
-                        + '\nPost code: ' + validarPostcode.value + '\nEmail: ' + validarEmail.value + '\nPassword: '
-                        + validarPassword.value);
-                    }else{
-                        alert(data.msg);
+                            + '\nID: ' + validarID.value + '\nBirth date: ' + birthDateChanged + '\nPhone number: '
+                            + validarPhone.value + '\nAddress: ' + validarAddress.value + '\nCity: ' + validarCity.value
+                            + '\nPost code: ' + validarPostcode.value + '\nEmail: ' + validarEmail.value + '\nPassword: '
+                            + validarPassword.value);
+                    } else {
+                        var errorMessage = '';
+                        for (var i = 0; i < data.errors.length; i++) {
+                            errorMessage += data.errors[i].msg + '\n';
+                        }
+                        alert(errorMessage);
                     }
                 })
-                .catch(function(){
+                .catch(function () {
                     alert('There has been an error. Try again.');
                 })
         }

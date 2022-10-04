@@ -6,15 +6,15 @@ window.onload = function (){
     generalAlert.style.color = 'red';
     
     var validarEmail = document.getElementById('email-input');
+    if (localStorage.getItem('email') != null && localStorage.getItem('email') != ''
+        && localStorage.getItem('email') != false && localStorage.getItem('email') != undefined){
+            validarEmail.value = localStorage.getItem('email');
+        }
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailAlert = document.createElement('p');
     emailAlert.innerHTML = 'Invalid email';
     emailAlert.style.color = 'red';
     var emailDiv = document.getElementById('email');
-
-    if (localStorage.getItem(email) != null && localStorage.getItem(email) != ''){
-        validarEmail.value = localStorage.getItem(email);
-    }
 
     validarEmail.onfocus = function(){
         emailDiv.removeChild(generalAlert);
@@ -37,14 +37,14 @@ window.onload = function (){
     }
     
     var validarPassword = document.getElementById('password-input');
+    if (localStorage.getItem('password') != null && localStorage.getItem('password') != ''
+        && localStorage.getItem('password') != false && localStorage.getItem('password') != undefined){
+            validarPassword.value = localStorage.getItem('password');
+        }
     var passAlert = document.createElement('p');
     passAlert.innerHTML = 'Password has to be 8 characters long or more';
     passAlert.style.color = 'red';
     var passDiv = document.getElementById('password');
-
-    if (localStorage.getItem(password) != null && localStorage.getItem(password) != ''){
-        validarPassword.value = localStorage.getItem(password);
-    }
 
     validarPassword.onfocus = function(){
         passDiv.removeChild(generalAlert);
@@ -65,6 +65,9 @@ window.onload = function (){
                 validar[1] = false;
             }   
     }
+
+    console.log(localStorage.getItem('email'));
+    console.log(localStorage.getItem('password'));
 
     var button = document.getElementById('button-send');
     

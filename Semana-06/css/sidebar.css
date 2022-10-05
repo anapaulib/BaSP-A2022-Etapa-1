@@ -1,8 +1,11 @@
 .none-sidebar{
+    display: flex;
+    flex-direction: column;
     padding: 2px;
 }
 
 .none-sidebar i{
+    padding: 5px;
     color: #5d5d5d;
 }
 
